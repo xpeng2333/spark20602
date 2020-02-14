@@ -36,8 +36,7 @@ object LinearSVCExample {
     val training = spark.read.format("libsvm").load("data/mllib/sample_libsvm_data.txt")
 
     val lsvc = new LinearSVC()
-      .setMaxIter(100000)
-      .setTol(1e-6)
+      .setMaxIter(10)
       .setRegParam(0.1)
       .setLoss("squared_hinge")
 //      .setSolver("l-bfgs")
